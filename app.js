@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
 
 app.post('/api/findPath', (req, res) => {
     fs.writeFile('temp.csv', req.body.graph, (err) => {
